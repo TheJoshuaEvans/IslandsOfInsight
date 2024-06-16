@@ -1,0 +1,71 @@
+{
+	"Unit Test File": {
+		"scope": "javascript",
+		"prefix": ["unit-test", "unittest"],
+		"body": [
+			"import ${TM_FILENAME_BASE/(.+).test$/$1/} from './${TM_FILENAME_BASE/(.+).test$/$1/}.js';",
+			"",
+			"describe('${TM_FILENAME_BASE/(.+).test$/$1/}', function() {",
+			"  $0",
+			"});",
+			""
+		]
+	},
+	"It": {
+		"scope": "javascript",
+		"prefix": "itshould",
+		"body": [
+			"it('should $1', async () => {",
+			"  $0",
+			"});"
+		]
+	},
+	"SyncIt": {
+		"scope": "javascript",
+		"prefix": "itsyncshould",
+		"body": [
+			"it('should $1', () => {",
+			"  $0",
+			"});"
+		]
+	},
+	"Custom Errors": {
+		"scope": "javascript",
+		"prefix": "destructure",
+		"body": "const { $0 } = require('$1');"
+	},
+	"Throws Async": {
+		"scope": "javascript",
+		"prefix": ["throwsasync", "asyncthrow"],
+		"body": [
+			"try {",
+			"  await $1;",
+			"  assert.fail('should have thrown an error');",
+			"} catch (e) {",
+			"  assert.ok(e instanceof $2);",
+			"}$0",
+		]
+	},
+	"Stub": {
+		"scope": "javascript",
+		"prefix": ["stub"],
+		"body": [
+			"/**",
+			" * @typedef $1Params",
+			" * $0",
+			" */",
+			"",
+			"/**",
+			" * $2",
+			" *",
+			" * @param {$1Params} params",
+			" */",
+			"const ${TM_FILENAME_BASE} = (params) => {",
+			"",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};",
+			""
+		]
+	}
+}

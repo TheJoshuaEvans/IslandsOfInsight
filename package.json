@@ -1,0 +1,21 @@
+{
+  "name": "islands-of-insight",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Code that helps me solve puzzles in Islands of Insight ;)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js .",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "@types/jest": "^29.5.12",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.5.0",
+    "globals": "^15.4.0",
+    "jest": "^29.7.0"
+  }
+}
